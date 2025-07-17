@@ -30,6 +30,7 @@ export default async function Page() {
 
   // Data fetching for "Today's Deals" ProductSlider (from 'commit'/'lessons')
   const todaysDeals = await getProductsByTag({ tag: 'todays-deal' })
+  const bestSellingProducts = await getProductsByTag({ tag: 'best-seller' })
 
   // Dynamically populated cards array for HomeCard (from your 'previous codes')
   const cards = [
@@ -85,6 +86,16 @@ export default async function Page() {
         <Card className='w-full rounded-none'>
           <CardContent className='p-4 items-center gap-3'>
             <ProductSlider title={"Today's Deals"} products={todaysDeals} />
+          </CardContent>
+        </Card>
+
+        <Card className='w-full rounded-none'>
+          <CardContent className='p-4 items-center gap-3'>
+            <ProductSlider
+              title='Best Selling Products'
+              products={bestSellingProducts}
+              hideDetails
+            />
           </CardContent>
         </Card>
 
