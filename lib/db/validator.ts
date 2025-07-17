@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { formatNumberWithDecimal } from './utils'
+import { formatNumberWithDecimal } from '../utils'
 
 // Common
 const Price = (field: string) =>
@@ -9,6 +9,7 @@ const Price = (field: string) =>
       (value) => /^\d+(\.\d{2})?$/.test(formatNumberWithDecimal(value)),
       `${field} must have exactly two decimal places (e.g., 49.99)`
     )
+
 export const ProductInputSchema = z.object({
   name: z.string().min(3, 'Name must be at least 3 characters'),
   slug: z.string().min(3, 'Slug must be at least 3 characters'),
