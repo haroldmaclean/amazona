@@ -11,6 +11,7 @@ import {
 } from '@/lib/actions/product.actions'
 import data from '@/lib/data' // Used for carousels
 import { toSlug } from '@/lib/utils' // Used for category images
+import BrowsingHistoryList from '@/components/shared/browsing-history-list'
 
 export default async function Page() {
   // Data fetching for HomeCard categories and product sections (from your 'previous codes')
@@ -98,6 +99,9 @@ export default async function Page() {
             />
           </CardContent>
         </Card>
+        <section>
+          <BrowsingHistoryList className='mt-10' />
+        </section>
 
         {/* You can add more ProductSlider components here for New Arrivals, Best Sellers etc.
             if your tutor introduces them later, using the 'newArrivals', 'bestSellers', 'featureds' data.
