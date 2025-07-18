@@ -1,5 +1,10 @@
-import { ProductInputSchema } from '@/lib/db/validator'
+// import { ProductInputSchema } from '@/lib/db/validator'
 import { z } from 'zod'
+import {
+  CartSchema,
+  OrderItemSchema,
+  ProductInputSchema,
+} from '@/lib/db/validator'
 
 export type IProductInput = z.infer<typeof ProductInputSchema>
 
@@ -17,3 +22,5 @@ export type Data = {
     isPublished: boolean
   }[]
 }
+export type OrderItem = z.infer<typeof OrderItemSchema>
+export type Cart = z.infer<typeof CartSchema>
