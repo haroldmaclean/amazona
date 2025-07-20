@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "email": "email dev",
     "seed": "npx tsx ./lib/db/seed.ts",
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -41,6 +42,9 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@paypal/react-paypal-js": "^8.8.3",
+    "@react-email/components": "^0.3.2",
+    "@react-email/preview-server": "^4.2.3",
     "@types/bcryptjs": "^3.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -48,7 +52,12 @@
     "autoprefixer": "^10.4.19",
     "eslint": "^9",
     "eslint-config-next": "15.1.0",
+    "i": "^0.3.7",
+    "npm": "^11.4.2",
+    "npx": "^10.2.2",
     "postcss": "^8",
+    "react-email": "^4.2.3",
+    "resend": "^4.7.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
