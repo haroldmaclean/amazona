@@ -47,7 +47,7 @@ import {
   getReviewByProductId,
   getReviews,
 } from '@/lib/actions/review.actions'
-import { ReviewInputSchema } from '@/lib/db/validator' // Corrected import path
+import { ReviewInputSchema } from '@/lib/db/validator'
 import RatingSummary from '@/components/shared/product/rating-summary'
 import { IProduct } from '@/lib/db/models/product.model'
 import { Separator } from '@/components/ui/separator'
@@ -226,17 +226,8 @@ export default function ReviewList({
                               <FormItem>
                                 <FormLabel>Rating</FormLabel>
                                 <Select
-                                  // **** UPDATED: Convert string value to number ****
-                                  onValueChange={(value) =>
-                                    field.onChange(Number(value))
-                                  }
-                                  // **** UPDATED: Ensure value prop is a string and handles undefined/null ****
-                                  value={
-                                    field.value !== undefined &&
-                                    field.value !== null
-                                      ? String(field.value)
-                                      : ''
-                                  }
+                                  onValueChange={field.onChange}
+                                  value={field.value.toString()}
                                 >
                                   <FormControl>
                                     <SelectTrigger>
